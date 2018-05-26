@@ -3,6 +3,8 @@ package globals
 import (
 	"os"
 
+	"github.com/go-redis/redis"
+
 	"database/sql"
 
 	"github.com/fatih/color"
@@ -15,6 +17,9 @@ var (
 
 	// DBConn Database connection
 	DBConn *sql.DB
+
+	// RedisConn redis connection handler
+	RedisConn *redis.Client
 )
 
 var (
@@ -26,9 +31,6 @@ var (
 
 	// LogSuccess Success Logger
 	LogSuccess = color.New(color.FgGreen).PrintfFunc()
-
-	// Version the version of the system
-	Version = "1.0.0"
 )
 
 // Boot initialize the environment
